@@ -107,7 +107,6 @@ rx <- r_bg(
     st$set(head(airquality), "ping", namespace = "blop")
   }
 )
-rx$wait()
 ```
 
 It’s now accessible in the first session:
@@ -126,6 +125,7 @@ st$get("ping", namespace = "blop")
 Namespaces can be deleted:
 
 ``` r
+st$remove_namespace(nsp)
 st$remove_namespace("blop")
 ```
 
@@ -136,15 +136,7 @@ size objects, the cost of `get`ting from disk instead of reading for RAM
 is pretty small.
 
 ``` r
-library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
+library(dplyr, warn.conflicts = FALSE)
 library(ggplot2)
 st$set(diamonds, "dm", "bench")
 bench::mark(
@@ -159,12 +151,12 @@ bench::mark(
 #> # A tibble: 2 x 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 ram           1.9ms   3.25ms     275.     3.11MB     19.2
-#> 2 disk         14.2ms  15.42ms      62.4    6.05MB     13.0
+#> 1 ram          1.52ms   2.99ms     291.     3.11MB     19.7
+#> 2 disk        12.05ms  13.77ms      71.0    6.05MB     15.2
 ```
 
-`set` and `get` are powered by `{qs}` `qread()` and `qwrite()` and take
-the same arguments, so you can use parameters to these functions to
+`set()` and `get()` are powered by `{qs}` `qread()` and `qwrite()` and
+take the same arguments, so you can use parameters to these functions to
 speed up the read and write timing.
 
 Read the `{qs}` benchmark

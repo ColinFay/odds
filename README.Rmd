@@ -73,6 +73,9 @@ rx <- r_bg(
     st$set(head(airquality), "ping", namespace = "blop")
   }
 )
+```
+
+```{r include = FALSE}
 rx$wait()
 ```
 
@@ -85,6 +88,7 @@ st$get("ping", namespace = "blop")
 Namespaces can be deleted: 
 
 ```{r}
+st$remove_namespace(nsp)
 st$remove_namespace("blop")
 ```
 
@@ -94,7 +98,7 @@ st$remove_namespace("blop")
 Of course, reading from disk adds some overhead, but for small to medium size objects, the cost of `get`ting from disk instead of reading for RAM is pretty small.
 
 ```{r}
-library(dplyr)
+library(dplyr, warn.conflicts = FALSE)
 library(ggplot2)
 st$set(diamonds, "dm", "bench")
 bench::mark(
@@ -108,7 +112,7 @@ bench::mark(
 )
 ```
 
-`set` and `get` are powered by `{qs}` `qread()` and `qwrite()` and take the same arguments, so you can use parameters to these functions to speed up the read and write timing. 
+`set()` and `get()` are powered by `{qs}` `qread()` and `qwrite()` and take the same arguments, so you can use parameters to these functions to speed up the read and write timing. 
 
 Read the `{qs}` benchmark [online](https://github.com/traversc/qs#summary-table).
 
