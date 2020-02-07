@@ -151,8 +151,8 @@ bench::mark(
 #> # A tibble: 2 x 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 ram          1.52ms   2.99ms     291.     3.11MB     19.7
-#> 2 disk        12.05ms  13.77ms      71.0    6.05MB     15.2
+#> 1 ram          1.85ms    3.4ms     243.     3.11MB     16.7
+#> 2 disk         13.6ms   15.8ms      59.3    6.05MB     16.2
 ```
 
 `set()` and `get()` are powered by `{qs}` `qread()` and `qwrite()` and

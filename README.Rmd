@@ -112,6 +112,11 @@ bench::mark(
 )
 ```
 
+```{r include = FALSE}
+st$remove_namespace("bench")
+```
+
+
 `set()` and `get()` are powered by `{qs}` `qread()` and `qwrite()` and take the same arguments, so you can use parameters to these functions to speed up the read and write timing. 
 
 Read the `{qs}` benchmark [online](https://github.com/traversc/qs#summary-table).
