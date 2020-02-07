@@ -1,21 +1,21 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# kbk
+# odds
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The goal of kbk is to provide an on-disk data-storage of native R
+The goal of `{odds}` is to provide an on-disk data-storage of native R
 object, for cross-session data access.
 
 ## Installation
 
-You can install the dev version of `{kbk}` from GitHub with:
+You can install the dev version of `{odds}` from GitHub with:
 
 ``` r
-install.packages("kbk")
+remotes::install_github("colinfay/odds")
 ```
 
 ## Basic use
@@ -159,13 +159,13 @@ bench::mark(
 #> # A tibble: 2 x 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 ram          2.02ms   3.56ms     242.     3.11MB     14.7
-#> 2 disk         14.6ms  15.67ms      58.9    6.05MB     16.8
+#> 1 ram          1.44ms   2.99ms     289.     3.11MB     19.4
+#> 2 disk        11.73ms  13.54ms      69.7    6.05MB     16.1
 ```
 
-`set` and `get` are powered by `{qs}` `qread()` and `qwrite()`, so you
-can use parameters to these functions to speed up the read and write
-timing.
+`set` and `get` are powered by `{qs}` `qread()` and `qwrite()` and take
+the same arguments, so you can use parameters to these functions to
+speed up the read and write timing.
 
 Read the `{qs}` benchmark
 [online](https://github.com/traversc/qs#summary-table).
