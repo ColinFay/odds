@@ -25,7 +25,7 @@ disk, so that you can access the values from one session to another.
 
 ### How it works
 
-By default, the storage is done at `~/.kbk`, but it can be changed when
+By default, the storage is done at `~/.odds`, but it can be changed when
 creating the storage object.
 
 **Note that the path is passed through `fs::path_norm()`, which doesn’t
@@ -159,8 +159,8 @@ bench::mark(
 #> # A tibble: 2 x 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 ram          1.44ms   2.99ms     289.     3.11MB     19.4
-#> 2 disk        11.73ms  13.54ms      69.7    6.05MB     16.1
+#> 1 ram           1.9ms   3.25ms     275.     3.11MB     19.2
+#> 2 disk         14.2ms  15.42ms      62.4    6.05MB     13.0
 ```
 
 `set` and `get` are powered by `{qs}` `qread()` and `qwrite()` and take

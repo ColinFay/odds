@@ -34,7 +34,7 @@ The main goal of `{odds}` is to create a data storage architecture, on disk, so 
 
 ### How it works
 
-By default, the storage is done at `~/.kbk`, but it can be changed when creating the storage object.
+By default, the storage is done at `~/.odds`, but it can be changed when creating the storage object.
 
 __Note that the path is passed through `fs::path_norm()`, which doesn't treat `~` the same way as base R on Windows.__
 
