@@ -2,7 +2,7 @@
 #' 
 #' @importFrom R6 R6Class
 #' @importFrom qs qsave qread
-#' @importFrom fs path_norm dir_create path dir_delete
+#' @importFrom fs path_norm dir_create path dir_delete file_delete
 #' @export
 Storage <- R6::R6Class(
   "Storage", 
@@ -68,6 +68,19 @@ Storage <- R6::R6Class(
         nthreads = nthreads
       )
     }, 
+    rm = function(
+      value, 
+      namespace = "global"
+    ){
+      file_delete(
+        path(
+          self$path, 
+          namespace, 
+          value, 
+          ext = "qs"
+        )
+      )
+    },
     remove_namespace = function(
       namespace
     ){
