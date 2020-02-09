@@ -85,6 +85,11 @@ It's now accessible in the first session:
 st$get("ping", namespace = "blop")
 ```
 
+Values can be deleted: 
+
+```{r}
+st$rm("ping", namespace = "blop")
+```
 Namespaces can be deleted: 
 
 ```{r}

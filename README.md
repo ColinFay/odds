@@ -122,6 +122,12 @@ st$get("ping", namespace = "blop")
 #> 6    28      NA 14.9   66     5   6
 ```
 
+Values can be deleted:
+
+``` r
+st$rm("ping", namespace = "blop")
+```
+
 Namespaces can be deleted:
 
 ``` r
@@ -151,8 +157,8 @@ bench::mark(
 #> # A tibble: 2 x 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 ram          1.85ms    3.4ms     243.     3.11MB     16.7
-#> 2 disk         13.6ms   15.8ms      59.3    6.05MB     16.2
+#> 1 ram          1.84ms   3.08ms     300.     3.07MB     22.0
+#> 2 disk        13.29ms  15.58ms      63.4    6.05MB     12.2
 ```
 
 `set()` and `get()` are powered by `{qs}` `qread()` and `qwrite()` and

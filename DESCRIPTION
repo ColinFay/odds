@@ -16,3 +16,6 @@ Imports:
     R6,
     qs,
     fs
+Suggests: 
+    testthat (>= 2.1.0), 
+    callr
