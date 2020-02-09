@@ -1,5 +1,5 @@
 Package: odds
-Title: On Disk Data Storage with Cross-Session Access
+Title: On Disk Data Storage for Cross-Session Access
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Colin",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "contact@colinfay.me",
            comment = c(ORCID = "0000-0001-7343-1846"))
-Description: On Disk Data Storage with Cross-Session Access.
+Description: On Disk Data Storage for Cross-Session Access.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

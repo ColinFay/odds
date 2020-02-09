@@ -130,3 +130,9 @@ Read the `{qs}` benchmark [online](https://github.com/traversc/qs#summary-table)
 
 This package heavily relies on the `{qs}` package. 
 Thanks to the package authors for their work.
+
+## Coc
+
+Please note that the 'odds' project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.

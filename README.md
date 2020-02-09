@@ -157,8 +157,8 @@ bench::mark(
 #> # A tibble: 2 x 6
 #>   expression      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 ram          1.84ms   3.08ms     300.     3.07MB     22.0
-#> 2 disk        13.29ms  15.58ms      63.4    6.05MB     12.2
+#> 1 ram           1.5ms   3.01ms     287.     3.07MB     21.7
+#> 2 disk         12.7ms  14.55ms      66.7    6.05MB     12.8
 ```
 
 `set()` and `get()` are powered by `{qs}` `qread()` and `qwrite()` and
@@ -172,3 +172,9 @@ Read the `{qs}` benchmark
 
 This package heavily relies on the `{qs}` package. Thanks to the package
 authors for their work.
+
+## Coc
+
+Please note that the ‘odds’ project is released with a [Contributor Code
+of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you
+agree to abide by its terms.
